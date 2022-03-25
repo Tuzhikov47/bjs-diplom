@@ -7,7 +7,7 @@ logoutButton.action = () => ApiConnector.logout(response => {
 });
 
 ApiConnector.current(response => {
-    if (response.succcess) {
+    if (response.success) {
         ProfileWidget.showProfile(response.data);
     }
 });
