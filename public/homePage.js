@@ -29,7 +29,7 @@ moneyManager.addMoneyCallback = data => {
     ApiConnector.addMoney(data, response => {
         if (response.success) {
             ProfileWidget.showProfile(response.data);
-            moneyManager.serMessage(response.success, 'Зачислено');
+            moneyManager.setMessage(response.success, 'Зачислено');
         } else {
             moneyManager.setMessage(response.success, response.error);
         };
@@ -42,7 +42,7 @@ moneyManager.conversionMoneyCallback = data => {
             ProfileWidget.showProfile(response.data);
             moneyManager.setMessage(response.success, 'Конвертировано');
         } else {
-            moneyManager.serMessage(response.success, response.error);
+            moneyManager.setMessage(response.success, response.error);
         };
     });
 };
@@ -53,7 +53,7 @@ moneyManager.sendMoneyCallback = data => {
             ProfileWidget.showProfile(response.data);
             moneyManager.setMessage(response.success, 'Перевод выполнен успешно');
         } else {
-            moneyManager.serMessage(response.success, response.error);
+            moneyManager.setMessage(response.success, response.error);
         }
     })
 }
